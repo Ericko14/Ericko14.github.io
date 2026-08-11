@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Erick Villacís | Systems Engineer</title>
+
+    <meta name="description"
+          content="Portfolio profesional de Erick Villacís - Ingeniero de Sistemas, Red Hat, Cloud, Infrastructure & Data">
+
+    <style>
+
+        /* ================================
+           GENERAL
+        ================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080b10;
+            color: #e6edf3;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+
+        /* ================================
+           NAVBAR
+        ================================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(8, 11, 16, 0.85);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid #1f2937;
+        }
+
+        .nav-container {
+            height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ff3b3b;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #9ca3af;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+
+        /* ================================
+           HERO
+        ================================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            background: #ff2222;
+
+            filter: blur(180px);
+
+            opacity: 0.08;
+
+            top: 10%;
+            left: 40%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .terminal {
+            color: #22c55e;
+            font-family: monospace;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 85px);
+            line-height: 1.05;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #ff3b3b;
+        }
+
+        .hero h2 {
+            font-size: clamp(22px, 3vw, 35px);
+            font-weight: 400;
+
+            color: #9ca3af;
+
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 750px;
+
+            color: #9ca3af;
+
+            font-size: 18px;
+
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 22px;
+
+            border-radius: 7px;
+
+            border: 1px solid #374151;
+
+            transition: 0.3s;
+
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: #ff3b3b;
+            border-color: #ff3b3b;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: #111827;
+        }
+
+        .btn-secondary:hover {
+            border-color: #ff3b3b;
+        }
+
+
+        /* ================================
+           SECTIONS
+        ================================= */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #ff3b3b;
+            font-family: monospace;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            margin-top: 5px;
+        }
+
+        .section-title p {
+            color: #9ca3af;
+            margin-top: 10px;
+        }
+
+
+        /* ================================
+           ABOUT
+        ================================= */
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 40px;
+        }
+
+        .about-text p {
+            color: #9ca3af;
+            margin-bottom: 15px;
+        }
+
+        .info-card {
+            background: #0d1117;
+
+            border: 1px solid #1f2937;
+
+            border-radius: 12px;
+
+            padding: 25px;
+        }
+
+        .info-card h3 {
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+
+            border-bottom: 1px solid #1f2937;
+
+            padding: 12px 0;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-item span:first-child {
+            color: #9ca3af;
+        }
+
+
+        /* ================================
+           SKILLS
+        ================================= */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #0d1117;
+
+            border: 1px solid #1f2937;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+
+            border-color: #ff3b3b;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 15px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #161b22;
+
+            border: 1px solid #30363d;
+
+            padding: 5px 10px;
+
+            border-radius: 5px;
+
+            font-size: 13px;
+
+            color: #c9d1d9;
+        }
+
+
+        /* ================================
+           EXPERIENCE
+        ================================= */
+
+        .timeline {
+            border-left: 2px solid #30363d;
+
+            padding-left: 30px;
+        }
+
+        .experience {
+            position: relative;
+
+            margin-bottom: 40px;
+        }
+
+        .experience::before {
+            content: "";
+
+            position: absolute;
+
+            left: -39px;
+            top: 5px;
+
+            width: 14px;
+            height: 14px;
+
+            background: #ff3b3b;
+
+            border-radius: 50%;
+
+            box-shadow: 0 0 15px rgba(255, 59, 59, 0.7);
+        }
+
+        .experience h3 {
+            font-size: 22px;
+        }
+
+        .experience .company {
+            color: #ff3b3b;
+
+            font-weight: bold;
+
+            margin-bottom: 5px;
+        }
+
+        .experience .date {
+            color: #6b7280;
+
+            font-size: 14px;
+
+            margin-bottom: 10px;
+        }
+
+        .experience p {
+            color: #9ca3af;
+        }
+
+
+        /* ================================
+           PROJECTS
+        ================================= */
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .project {
+            background: #0d1117;
+
+            border: 1px solid #1f2937;
+
+            border-radius: 12px;
+
+            padding: 30px;
+
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+
+            border-color: #ff3b3b;
+        }
+
+        .project-icon {
+            font-size: 35px;
+
+            margin-bottom: 15px;
+        }
+
+        .project h3 {
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: #9ca3af;
+
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            color: #ff3b3b;
+
+            font-weight: bold;
+        }
+
+
+        /* ================================
+           EDUCATION
+        ================================= */
+
+        .education-card {
+            background: #0d1117;
+
+            border: 1px solid #1f2937;
+
+            border-radius: 12px;
+
+            padding: 25px;
+
+            margin-bottom: 20px;
+        }
+
+        .education-card h3 {
+            font-size: 21px;
+        }
+
+        .education-card p {
+            color: #9ca3af;
+        }
+
+
+        /* ================================
+           CONTACT
+        ================================= */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #9ca3af;
+
+            max-width: 650px;
+
+            margin: 0 auto 30px;
+        }
+
+        .contact-links {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        footer {
+            border-top: 1px solid #1f2937;
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: #6b7280;
+
+            font-size: 14px;
+        }
+
+
+        /* ================================
+           RESPONSIVE
+        ================================= */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- ================================
+     NAVIGATION
+================================= -->
+
+<nav>
+
+    <div class="container nav-container">
+
+        <div class="logo">
+            Erick<span>Villacís</span>
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#about">Sobre mí</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#experience">Experiencia</a>
+            </li>
+
+            <li>
+                <a href="#projects">Proyectos</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contacto</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ================================
+     HERO
+================================= -->
+
+<header class="hero">
+
+    <div class="container hero-content">
+
+        <div class="terminal">
+            $ whoami
+        </div>
+
+        <h1>
+            Erick <span>Villacís</span>
+        </h1>
+
+        <h2>
+            Systems Engineer · Infrastructure · Cloud · Data
+        </h2>
+
+        <p>
+            Ingeniero de Sistemas con mención en Telemática,
+            enfocado en arquitectura de soluciones, infraestructura
+            tecnológica, Red Hat, virtualización, automatización,
+            Cloud y tecnologías de datos.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#projects" class="btn btn-primary">
+                Ver proyectos
+            </a>
+
+            <a href="#contact" class="btn btn-secondary">
+                Contactarme
+            </a>
+
+            <!--
+            Más adelante pondremos aquí tu PDF:
+
+            <a href="cv/Erick_Villacis_CV.pdf"
+               class="btn btn-secondary"
+               target="_blank">
+               Descargar CV
+            </a>
+            -->
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================================
+     ABOUT
+================================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>01 / ABOUT</span>
+
+            <h2>Sobre mí</h2>
+
+            <p>
+                Ingeniería, infraestructura y tecnología.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    Soy Ingeniero de Sistemas con mención en
+                    Telemática, con experiencia en infraestructura
+                    TI, administración de sistemas, virtualización,
+                    redes y soluciones empresariales.
+                </p>
+
+                <p>
+                    Actualmente orientado a la arquitectura de
+                    soluciones y preventa tecnológica, trabajando
+                    con tecnologías del ecosistema Red Hat y
+                    soluciones de infraestructura.
+                </p>
+
+                <p>
+                    También cuento con formación en Big Data,
+                    Business Intelligence, Data Mining, Machine
+                    Learning y visualización de datos.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>Perfil técnico</h3>
+
+                <div class="info-item">
+                    <span>Especialidad</span>
+                    <strong>Systems Engineering</strong>
+                </div>
+
+                <div class="info-item">
+                    <span>Infraestructura</span>
+                    <strong>Linux / Virtualization</strong>
+                </div>
+
+                <div class="info-item">
+                    <span>Red Hat</span>
+                    <strong>RHEL / OpenShift</strong>
+                </div>
+
+                <div class="info-item">
+                    <span>Cloud</span>
+                    <strong>Azure / AWS / GCP</strong>
+                </div>
+
+                <div class="info-item">
+                    <span>Data</span>
+                    <strong>Python / SQL / BI</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================
+     SKILLS
+================================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>02 / TECHNOLOGIES</span>
+
+            <h2>Technical Skills</h2>
+
+            <p>
+                Tecnologías y herramientas con las que trabajo.
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <h3>🔴 Red Hat</h3>
+
+                <div class="tags">
+
+                    <span class="tag">RHEL</span>
+                    <span class="tag">OpenShift</span>
+                    <span class="tag">Ansible</span>
+                    <span class="tag">Satellite</span>
+                    <span class="tag">Insights</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>🐧 Infrastructure</h3>
+
+                <div class="tags">
+
+                    <span class="tag">Linux</span>
+                    <span class="tag">Windows Server</span>
+                    <span class="tag">VMware</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">Kubernetes</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>☁️ Cloud</h3>
+
+                <div class="tags">
+
+                    <span class="tag">AWS</span>
+                    <span class="tag">Azure</span>
+                    <span class="tag">Google Cloud</span>
+                    <span class="tag">Terraform</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>📊 Data & BI</h3>
+
+                <div class="tags">
+
+                    <span class="tag">Python</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">Power BI</span>
+                    <span class="tag">Tableau</span>
+                    <span class="tag">ETL</span>
+                    <span class="tag">Data Warehouse</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>💻 Development</h3>
+
+                <div class="tags">
+
+                    <span class="tag">Python</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">Spring Boot</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">Git</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>📡 Networking</h3>
+
+                <div class="tags">
+
+                    <span class="tag">LAN/WAN</span>
+                    <span class="tag">TCP/IP</span>
+                    <span class="tag">Cisco</span>
+                    <span class="tag">Monitoring</span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================
+     EXPERIENCE
+================================= -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>03 / EXPERIENCE</span>
+
+            <h2>Experiencia profesional</h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="experience">
+
+                <h3>Arquitecto Especialista / Preventa</h3>
+
+                <div class="company">
+                    Nexsys del Ecuador
+                </div>
+
+                <div class="date">
+                    Actualidad
+                </div>
+
+                <p>
+                    Arquitectura y preventa de soluciones
+                    tecnológicas, con enfoque en infraestructura,
+                    Red Hat, virtualización, automatización y
+                    soluciones empresariales.
+                </p>
+
+            </div>
+
+
+            <div class="experience">
+
+                <h3>Especialista de TI</h3>
+
+                <div class="company">
+                    Experiencia en infraestructura y tecnología
+                </div>
+
+                <div class="date">
+                    Experiencia profesional
+                </div>
+
+                <p>
+                    Administración de infraestructura tecnológica,
+                    sistemas Linux y Windows, redes, virtualización,
+                    soporte y plataformas empresariales.
+                </p>
+
+            </div>
+
+
+            <div class="experience">
+
+                <h3>Experiencia en Tecnología</h3>
+
+                <div class="company">
+                    Diferentes organizaciones
+                </div>
+
+                <p>
+                    Participación en proyectos relacionados con
+                    infraestructura TI, soporte tecnológico,
+                    servidores, redes y administración de sistemas.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================
+     PROJECTS
+================================= -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>04 / PROJECTS</span>
+
+            <h2>Proyectos destacados</h2>
+
+            <p>
+                Proyectos técnicos, académicos y de innovación.
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <div class="project">
+
+                <div class="project-icon">
+                    🔎
+                </div>
+
+                <h3>FLISoL Evidence as Code</h3>
+
+                <p>
+                    Proyecto presentado en FLISoL Quito 2026,
+                    desarrollado con Java 21 y Spring Boot,
+                    incorporando observabilidad mediante
+                    OpenTelemetry, Jaeger y Prometheus.
+                </p>
+
+                <a href="#" class="project-link">
+                    Próximamente →
+                </a>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-icon">
+                    🪞
+                </div>
+
+                <h3>Magic Mirror</h3>
+
+                <p>
+                    Proyecto tecnológico basado en Raspberry Pi,
+                    Linux y tecnologías de visualización,
+                    desarrollado como proyecto académico.
+                </p>
+
+                <a href="#" class="project-link">
+                    Ver proyecto →
+                </a>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-icon">
+                    📊
+                </div>
+
+                <h3>Data Science & Machine Learning</h3>
+
+                <p>
+                    Proyectos de análisis de datos, clasificación,
+                    regresión, evaluación de modelos y
+                    visualización utilizando Python y herramientas
+                    de Data Science.
+                </p>
+
+                <a href="#" class="project-link">
+                    Ver proyectos →
+                </a>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-icon">
+                    📈
+                </div>
+
+                <h3>Business Intelligence</h3>
+
+                <p>
+                    Desarrollo de soluciones de Business
+                    Intelligence utilizando SQL, Power BI,
+                    Data Warehouse, ETL y análisis de datos.
+                </p>
+
+                <a href="#" class="project-link">
+                    Ver proyecto →
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================
+     EDUCATION
+================================= -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>05 / EDUCATION</span>
+
+            <h2>Formación</h2>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <h3>
+                Ingeniería de Sistemas con mención en Telemática
+            </h3>
+
+            <p>
+                Universidad Politécnica Salesiana
+            </p>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <h3>
+                Maestría en Big Data & Business Intelligence
+            </h3>
+
+            <p>
+                Formación especializada en Data Mining,
+                Business Intelligence, Data Governance,
+                Machine Learning, SQL, Power BI y Big Data.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================
+     CONTACT
+================================= -->
+
+<section id="contact">
+
+    <div class="container contact">
+
+        <div class="section-title">
+
+            <span>06 / CONTACT</span>
+
+            <h2>¿Trabajamos juntos?</h2>
+
+        </div>
+
+        <p>
+            Estoy interesado en oportunidades relacionadas con
+            arquitectura de soluciones, infraestructura,
+            Red Hat, Cloud, Data y tecnología.
+        </p>
+
+
+        <div class="contact-links">
+
+            <!-- CAMBIA ESTOS ENLACES -->
+
+            <a
+                href="https://www.linkedin.com/"
+                target="_blank"
+                class="btn btn-primary">
+
+                LinkedIn
+
+            </a>
+
+
+            <a
+                href="https://github.com/Ericko14"
+                target="_blank"
+                class="btn btn-secondary">
+
+                GitHub
+
+            </a>
+
+
+            <a
+                href="mailto:TU-CORREO@ejemplo.com"
+                class="btn btn-secondary">
+
+                Email
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================
+     FOOTER
+================================= -->
+
+<footer>
+
+    © 2026 Erick Villacís · Systems Engineer
+
+</footer>
+
+
+</body>
+</html>
